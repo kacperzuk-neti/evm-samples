@@ -1,0 +1,5 @@
+forge debug --debug contracts/Mul.sol --sig "multiply()"
+forge build --extra-output ir
+cat ./out/Mul.sol/Mul.json | jq -r '.ir'
+
+forge debug --debug contracts/Debugging.sol --sig "updateStorageArray(uint256,uint256)" 1 2
